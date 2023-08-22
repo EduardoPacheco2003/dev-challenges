@@ -1,0 +1,169 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
+  --step--1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
+  --step-0: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem);
+  --step-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem);
+  --step-2: clamp(1.44rem, calc(1.26rem + 0.89vw), 1.95rem);
+  --step-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
+  --step-4: clamp(2.07rem, calc(1.73rem + 1.7vw), 3.05rem);
+  --step-5: clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem);
+}
+
+.body-centered {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.step--2 {
+  font-size: var(--step--2);
+}
+.step--1 {
+  font-size: var(--step--1);
+}
+.step-0 {
+  font-size: var(--step-0);
+}
+.step-1 {
+  font-size: var(--step-1);
+}
+.step-2 {
+  font-size: var(--step-2);
+}
+.step-3 {
+  font-size: var(--step-3);
+}
+.step-4 {
+  font-size: var(--step-4);
+}
+.step-5 {
+  font-size: var(--step-5);
+}
+
+/* 
+Grids
+12 / 1 = 12
+12 / 2 = 6
+12 / 3 = 4
+12 / 4 = 3
+12 / 6 = 2
+12 / 12 = 1
+
+5 + 7 = 12
+2 + 5 + 5 = 12
+4 + 2 + 3 + 3 = 12
+
+12 ---- > 100%
+?col --- > ??%
+
+Grid System Artesanal con Flexbox a 12 columnas
+
+Tamaños (Mediaqueries)
+  xs    -   extrasmall     - 0                -  479px     -    480res
+  sm   -    small          - 480px (30em)     -  767px     -    800res
+  md  -     medium         - 768px (48em)     -  991px     -    1024res
+  lg    -   large          - 992px (62em)     -  1199px    -    1280res
+  xl    -   extralarge     -+1200px (75em)                 -   >1281res
+*/
+
+.responsive-media {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  /* 
+  Formato widescreen 16:9
+  16 --- > 100%
+  9 ---> 56.25%
+  */
+  padding-bottom: 56.25%;
+}
+
+.responsive-media > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.svg-container svg {
+  width: clamp(20px, 50%, 30px);
+  height: auto;
+}
+
+.margin-0{
+  margin: 0;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.gap-0-5 {
+  gap: 0.5rem;
+}
+
+.m-top-1 {
+  margin-top: 1rem;
+}
+
+.m-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.timings-card {
+  border: thin solid black;
+}
+
+.timing-svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timing-svg-container svg {
+  width: clamp(20px, 50%, 34px);
+  height: auto;
+}
+
+
+.timing-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+/* Screen > 768px */
+@media screen and (min-width: 48em) {
+  .svg-container {
+    justify-content: center;
+  }
+}
+
+/* Screen > 1200px */
+@media screen and (min-width: 75em) {
+  .svg-container {
+    justify-content: center;
+  }
+}
